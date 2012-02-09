@@ -1,0 +1,40 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="login.css"/>
+</head>
+
+<form method="POST" action="register.php" onsubmit="return validate()">
+	<div id="left">
+		<div class="label">Email:</div>
+		<div class="label">Password:</div>
+	</div>
+	<div id="right">
+		<input type="text" name="email"/><span id="email" class="error">ERROR: you did not supply an email address</span><br/>
+		<input type="password" name="pass"/><span id="pass" class="error">ERROR: you did not supply a password</span><br/>
+	</div>
+	<div class="divider"></div>
+	<br/>
+	<input type="submit" value="Submit" />
+</form>
+
+<script type="text/javascript">
+	function validate()
+	{
+		document.getElementById('email').style.display = "none";
+		document.getElementById('pass').style.display = "none";
+
+		var ret = true;
+
+		if ( document.forms[0].email.value == "" )
+		{
+			document.getElementById('email').style.display = "inline";
+			ret = false;
+		}
+		if ( document.forms[0].pass.value == "" )
+		{
+			document.getElementById('pass').style.display = "inline";
+			ret = false;
+		}
+
+		return ret;
+	}
+</script>

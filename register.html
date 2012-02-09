@@ -1,0 +1,65 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="register.css"/>
+</head>
+
+<form method="POST" action="register.php" onsubmit="return validate()">
+	<div id="left">
+		<div class="label">Email:</div>
+		<div class="label">First Name:</div>
+		<div class="label">Last Name:</div>
+		<div class="label">Password:</div>
+	</div>
+	<div id="right">
+		<input type="text" name="email"/><span id="email" class="error">ERROR: you did not supply an email address or your email address is malformed</span><br/>
+		<input type="text" name="first"/><span id="first" class="error">ERROR: you did not supply a first name</span><br/>
+		<input type="text" name="last"/><span id="last" class="error">ERROR: you did not supply a last name</span><br/>
+		<input type="password" name="pass"/><span id="pass" class="error">ERROR: you did not supply a password</span><br/>
+	</div>
+	<div class="divider"></div>
+	<br/>
+	<input type="submit" value="Submit" />
+</form>
+
+<script type="text/javascript">
+	function validate()
+	{
+		document.getElementById('email').style.display = "none";
+		document.getElementById('first').style.display = "none";
+		document.getElementById('last').style.display = "none";
+		document.getElementById('pass').style.display = "none";
+
+		var ret = true;
+
+
+		if ( !/^[^0-9][A-z0-9_]+([.][A-z0-9_]+)*[@][A-z0-9_]+([.][A-z0-9_]+)*[.][A-z]{2,4}$/.test(document.forms[0].email.value) )
+		{
+			document.getElementById('email').style.display = "inline";
+			ret = false;
+		}
+
+
+
+		if ( document.forms[0].email.value == "" )
+		{
+			document.getElementById('email').style.display = "inline";
+			ret = false;
+		}
+		if ( document.forms[0].first.value == "" )
+		{
+			document.getElementById('first').style.display = "inline";
+			ret = false;
+		}
+		if ( document.forms[0].last.value == "" )
+		{
+			document.getElementById('last').style.display = "inline";
+			ret = false;
+		}
+		if ( document.forms[0].pass.value == "" )
+		{
+			document.getElementById('pass').style.display = "inline";
+			ret = false;
+		}
+
+		return ret;
+	}
+</script>

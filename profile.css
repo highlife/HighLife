@@ -1,0 +1,9 @@
+.product div
+{
+	float:left;
+}
+
+.divider
+{
+	clear:both;
+}

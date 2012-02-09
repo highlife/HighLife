@@ -1,0 +1,33 @@
+#left
+{
+	float:left;
+	text-align:right;
+	padding-top:8px;
+}
+
+#right
+{
+	float:left;
+}
+
+.divider
+{
+	clear:both;
+}
+
+.label
+{
+	margin-right:10px;
+	height:30px;
+}
+
+#right input
+{
+	height:30px;
+}
+
+.error
+{
+	color:#FF0000;
+	display:none;
+}
